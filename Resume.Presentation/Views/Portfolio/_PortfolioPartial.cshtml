@@ -1,0 +1,27 @@
+﻿@using Resume.Domain.ViewModels.Portfolio
+@using Resume.Application.StaticTools
+@model List<PortfolioViewModel>
+
+
+
+@foreach (PortfolioViewModel item in Model)
+{
+    <div class="col-lg-3 col-md-6 col-sm-12 element-item @item.PortfolioCategoryName">
+        <div class="our-project">
+            <div class="img">
+                <img src="@($"{FilePaths.PortfolioImg}{item.Image}")"
+                     alt="@(item.ImageAlt)"
+                     class="img-fluid" />
+            </div>
+            <div class="det-card">
+                <h4 class="text-uppercase per-title">@item.Title</h4>
+                <p class="pt-2 per-title">@item.PortfolioCategoryName</p>
+                <button type="button"
+                        class="btn btn-outline-secondary btn-style ">
+                    <a  href="@(!string.IsNullOrEmpty(item.Link) ? item.Link : "#")">سورس کد</a>
+                </button>
+
+            </div>
+        </div>
+    </div>
+}

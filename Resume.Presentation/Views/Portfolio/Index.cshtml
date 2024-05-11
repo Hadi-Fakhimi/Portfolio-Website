@@ -1,0 +1,31 @@
+﻿@model Resume.Domain.ViewModels.Page.PortfolioPageViewModel
+@using Resume.Domain.ViewModels.Portfolio
+@using Resume.Application.StaticTools
+   <!-- ============== start project area =============== -->
+<section class="project-area" id="portfolio">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="section-title text-center">
+                    <h2 class="mb-3 mt-3">نمونه کار های من:</h2>
+                </div>
+            </div>
+        </div>
+        @if (Model.PortfolioCategory !=null && Model.PortfolioCategory.Any())
+        {
+            <partial name="_PortfolioCategoryPartial" model="Model.PortfolioCategory"/>
+        }
+
+
+        <div class="row grid">
+
+            @if(Model.Portfolio != null && Model.Portfolio.Any())
+            {
+                <partial name="_PortfolioPartial" model="Model.Portfolio"/>
+            }
+
+        </div>
+    </div>
+</section>
+<!-- ============== end project area =============== -->
+

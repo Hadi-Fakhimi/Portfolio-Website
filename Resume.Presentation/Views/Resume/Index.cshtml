@@ -1,0 +1,69 @@
+﻿@model Resume.Domain.ViewModels.Page.ResumePageViewModel
+    <!-- ============== start skills area ================ -->
+<section class="skill-area">
+    <div class="container-lg">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="section-title text-center">
+                    <h2 class="mb-3 mt-3">رزومه من:</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mt-4">
+                            <h2 class="title title--h2">
+                                <img class="title-icon"
+                                     src="~/content/images/thing/origin/icon-education.svg"
+                                     alt="" />
+                                تحصیلات
+                            </h2>
+                            <div class="timeline">
+                               @if (Model.Education != null && Model.Education.Any())
+                               {
+                                    <partial name="_EducationPartial" model="Model.Education" />
+                               }
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <dir class="col-md-6">
+                        <div class="mt-4">
+                            <h2 class="title title--h2">
+                                <img class="title-icon"
+                                     src="~/content/images/thing/origin/icon-experience.svg"
+                                     alt="" />
+                                تجربه کار
+                            </h2>
+                            <div class="timeline">
+                                @if (Model.Experience != null && Model.Experience.Any())
+                                {
+                                    <partial name="_ExperiencePartial" model="Model.Experience" />
+                                }
+                            </div>
+                        </div>
+                    </dir>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="col-md-12 mt-3 mt-md-0">
+                    @if (Model.Skill != null && Model.Skill.Any())
+                    {
+                        <partial name="_SkillPartial" model="Model.Skill" />
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+

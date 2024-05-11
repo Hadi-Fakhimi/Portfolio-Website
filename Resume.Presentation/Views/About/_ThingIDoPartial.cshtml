@@ -1,0 +1,19 @@
+﻿@using Resume.Domain.ViewModels.ThingIDo
+@using Resume.Application.StaticTools
+@model List<ThingIDoListViewModel>
+
+<!-- Case Item -->
+
+@foreach(ThingIDoListViewModel item in Model)
+{
+    <div class="col-12 col-lg-@item.Col_lg case-item-wrap">
+        <div class="case-item">
+            <img class="case-item__icon" src="@(FilePaths.ThingIDoImg + item.Icon)" alt="" />
+            <h3 class="title title--h3">@item.Title</h3>
+            <p class="case-item__caption">
+                @item.description
+            </p>
+        </div>
+    </div>
+
+}

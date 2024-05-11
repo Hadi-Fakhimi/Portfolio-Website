@@ -1,0 +1,132 @@
+﻿@model Resume.Domain.ViewModels.Portfolio.CreateOrEditPortfolioViewModel
+
+@{
+    bool isCreate = Model.Id == 0 ? true : false;
+}
+
+
+<form id="PortfolioForm" asp-area="Admin" asp-controller="Portfolio" asp-action="SubmitPortfolioFormModal"
+      data-ajax="true" data-ajax-begin="StartLoading()" data-ajax-success="PortfolioFormSubmited">
+
+    <div class="row">
+        <div class="col-12">
+            <input type="hidden" asp-for="Image" />
+            @if (!isCreate)
+            {
+                <input type="hidden" asp-for="Id" />
+            }
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">@(isCreate ? "افزودن" : "ویرایش")</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <div class="form-group">
+                    <label asp-for="Title"></label>
+                    <div class="controls">
+                        <input type="text" asp-for="Title" class="form-control">
+                    </div>
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ImageAlt"></label>
+                    <div class="controls">
+                        <input type="text" asp-for="ImageAlt" class="form-control">
+                    </div>
+                    <span asp-validation-for="ImageAlt" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Order"></label>
+                    <div class="controls">
+                        <input type="number" asp-for="Order" class="form-control">
+                    </div>
+                    <span asp-validation-for="Order" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Link"></label>
+                    <div class="controls">
+                        <textarea asp-for="Link" class="form-control"></textarea>
+                    </div>
+                    <span asp-validation-for="Link" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="image">آواتار</label>
+                    <div class="controls">
+                        <input type="file" name="image" id="image" class="form-control" />
+                    </div>
+                    <span asp-validation-for="Image" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PortfolioCategoryId"></label>
+                    <h5 class="my-10">لیست دسته بندی نمونه کار ها</h5>
+                    <select asp-for="PortfolioCategoryId" class="selectpicker">
+                        @foreach (var item in Model.PortfolioCategory)
+                        {
+                            <option value="@item.Id">@item.Name</option>
+                        }
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary @(isCreate ? "btn-success" : "btn-warning")">@(isCreate ? "افزودن" : "ویرایش")</button>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">خروج</button>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+
+</form>
+
+<script>
+    $("#image").change(function () {
+
+        const imageFile = $('input#image')[0].files[0]
+
+        if (imageFile.name.split('.').pop() === "png" || imageFile.name.split('.').pop() === "svg" || imageFile.name.split('.').pop() === "jpg") {
+
+            const fd = new FormData();
+            fd.append("file", imageFile);
+
+            $.ajax({
+                type: "Post",
+                url: "/Admin/Portfolio/UploadPortfolioAjaxImage",
+                enctype: "multipart/form-data",
+                data: fd,
+                beforeSend: function () {
+                    ShowMessage("اعلان", "لطفا تا انتهای بارگذاری صبر کنید ...", "info")
+                },
+                success: function (response) {
+                    if (response.status === "Success") {
+                        ShowMessage("اعلان", "فایل مورد نظر با موفقیت بارگذاری شد .", "success");
+                        $("#Image").val(response.imageName);
+                    }
+                    else if (response.status === "Error") {
+                        ShowMessage("خطا", "فرمت فایل باید svg ، jpg یا png باشد", "error")
+                    }
+                },
+                error: function () {
+                    ShowMessage("خطا", "در بارگذاری فایل خطایی رخ داده است .", "error")
+                },
+                cache: false,
+                contentType: false,
+                processData: false
+            })
+        }
+        else {
+            ShowMessage("خطا", "فرمت فایل باید jpg ، svg یا png باشد", "error")
+        }
+
+
+    });
+</script>
+

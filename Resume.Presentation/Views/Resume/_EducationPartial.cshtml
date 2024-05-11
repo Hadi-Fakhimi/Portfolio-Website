@@ -1,0 +1,16 @@
+﻿@using Resume.Domain.ViewModels.Education
+@model List<EducationViewModel>
+
+@foreach (EducationViewModel item in Model)
+{
+
+    <article class="timeline__item">
+        <h3 class="title title--h3 timeline__title">
+            @item.Title
+        </h3>
+        <span class="timeline__period">@item.StartDate — @item.EndDate</span>
+        <p class="timeline__description">
+            @item.Description
+        </p>
+    </article>
+}

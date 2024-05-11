@@ -1,0 +1,75 @@
+﻿@using Resume.Domain.ViewModels.Account
+@model LoginViewModel
+
+
+
+<link href="~/site/css/partials/loginstyle.css" rel="stylesheet" />
+
+<div id="main-wrapper" class="container login-wrapper">
+    <div class="row justify-content-center">
+        <div class="col-xl-10">
+            <div class="card border-0">
+                <div class="card-body p-0">
+                    <div class="row no-gutters">
+                        <div class="col-lg-6">
+                            <div class="p-5">
+                                <div class="mb-5">
+                                    <h3 class="h4 font-weight-bold text-theme">ورود</h3>
+                                </div>
+                                <p class="text-muted mt-2 mb-5">:نام کاربری و رمز عبورتو وارد کن تا به پنل ادمین دسترسی پیدا کنی</p>
+
+                                <form asp-controller="Account" asp-action="Login" method="post">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">پست الکترونیک</label>
+                                        <input asp-for="Email" type="email" class="form-control" id="exampleInputEmail1">
+                                    </div>
+                                    <span class="text-danger" asp-validation-for="Email"></span>
+                                    <div class="form-group mb-5">
+                                        <label for="exampleInputPassword1">رمزعبور</label>
+                                        <input asp-for="Password" type="password" class="form-control" id="exampleInputPassword1">
+                                    </div>
+                                    <span class="text-danger" asp-validation-for="Password"></span>
+                                    <div class="form-check">
+                                        <input asp-for="RememberMe" type="checkbox" class="form-check-input" id="exampleCheck1">
+                                        <label class="form-check-label" for="exampleCheck1">مرا به خاطر بسپار</label>
+                                        <span class="text-danger" asp-validation-for="RememberMe"></span>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-theme">ورود</button>
+                                    <a asp-controller="Account" asp-action="ForgotPassword" class="forgot-link float-right text-primary text-secondary" style="text-decoration:none;">رمز خود را فراموش کردم</a>
+
+                                    <input type="hidden" asp-for="Captcha"/>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 d-none d-lg-inline-block">
+                            <div class="account-block rounded-right">
+                                <div class="overlay rounded-right"></div>
+                                <div class="account-testimonial">
+                                    <h4 class="text-white mb-4">سلام دوباره به شما</h4>
+                                    <p class="lead text-white">Admin Panel Login</p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- end card-body -->
+            </div>
+            <!-- end card -->
+
+            <!-- end row -->
+
+        </div>
+        <!-- end col -->
+    </div>
+    <!-- Row -->
+</div>
+@section Script {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <partial name="_CaptchaScriptPartial" />
+
+}

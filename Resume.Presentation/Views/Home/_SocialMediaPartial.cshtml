@@ -1,0 +1,7 @@
+﻿@using Resume.Domain.ViewModels.SocialMedia
+@model List<SocialMediaViewModel>
+
+@foreach(SocialMediaViewModel item in Model)
+{
+    <a href="@item.Link"><i class="@item.Icon"></i></a>
+}

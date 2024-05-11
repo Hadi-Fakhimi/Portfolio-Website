@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    @await Component.InvokeAsync("MetaTag")
+    <partial name="_HeaderRefrencesPartial" />
+</head>
+<body>
+    <!-- ================ start header area ================ -->
+
+    <header class="header-area">
+        <partial name="_MenuPartial"/>
+    </header>
+
+    <!-- ================ start main area ================ -->
+    <main class="site-main">
+        @RenderBody()
+    </main>
+    <!-- ================ end main area ================ -->
+
+    <!-- ================ end header area ================ -->
+    @* <partial name="_FooterPartial"/> *@
+    <partial name="_FooterRefrencesPartial"/>
+    <partial name="_Notification" />
+    @RenderSection("Script",false)
+</body>
+</html>
+

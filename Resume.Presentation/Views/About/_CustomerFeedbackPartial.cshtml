@@ -1,0 +1,22 @@
+﻿@using Resume.Domain.ViewModels.CustomerFeedback
+@using Resume.Application.StaticTools
+@model List<CustomerFeedbackViewModel>
+
+
+    @foreach (CustomerFeedbackViewModel item in Model)
+    {
+        <div class="testi-item carousel-item active bg-light shadow-sm p-4">
+            <div class="testi-author-info d-flex align-item-center">
+                <img class="img-testi" src="@(string.IsNullOrEmpty(item.Avatar) ? FilePaths.DefaultAvatar : $"{FilePaths.CustomerFeedbackAvatar}{item.Avatar}")" alt="avatar" />
+                <div class="author ms-3">
+                    <h5 class="fs-5">@item.Name</h5>
+                    <p class="text-muted">@item.AboutJob</p>
+                </div>
+            </div>
+            <p class="text-muted">
+                @item.Description
+            </p>
+        </div>
+    }
+
+

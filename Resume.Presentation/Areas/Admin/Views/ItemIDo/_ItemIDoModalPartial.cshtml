@@ -1,0 +1,65 @@
+﻿@model Resume.Domain.ViewModels.ItemIDo.CreateOrEditItemIDoViewModel
+
+@{
+    bool isCreate = Model.Id == 0 ? true : false;
+}
+
+
+<form id="ItemIDoForm" asp-area="Admin" asp-controller="ItemIDo" asp-action="SubmitItemIDoFormModal"
+      data-ajax="true" data-ajax-begin="StartLoading()" data-ajax-success="ItemIDoFormSubmited">
+
+    <div class="row">
+        <div class="col-12">
+            @if (!isCreate)
+            {
+                <input type="hidden" asp-for="Id" />
+            }
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">@(isCreate ? "افزودن" : "ویرایش")</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <div class="form-group">
+                    <label asp-for="Name"></label>
+                    <div class="controls">
+                        <input type="text" asp-for="Name" class="form-control">
+                    </div>
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Number"></label>
+                    <div class="controls">
+                        <input type="text" asp-for="Number" class="form-control">
+                    </div>
+                    <span asp-validation-for="Number" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Order"></label>
+                    <div class="controls">
+                        <input type="number" asp-for="Order" class="form-control">
+                    </div>
+                    <span asp-validation-for="Order" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-primary @(isCreate ? "btn-success" : "btn-warning")">@(isCreate ? "افزودن" : "ویرایش")</button>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">خروج</button>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+
+</form>
+
+
+

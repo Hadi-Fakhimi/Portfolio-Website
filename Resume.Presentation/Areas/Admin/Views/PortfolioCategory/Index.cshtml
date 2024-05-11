@@ -1,0 +1,74 @@
+﻿@model List<PortfolioCategoryViewModel>
+@using Resume.Domain.ViewModels.PortfolioCategory
+
+@{
+    ViewData["Title"] = "دسته بندی کار ها";
+}
+
+
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="d-flex align-items-center">
+        <div class="mr-auto">
+            <h3 class="page-title">@ViewData["Title"]</h3>
+        </div>
+        <div class="right-title">
+            <!-- Button trigger modal -->
+            <button type="button" onclick="LoadPortfolioCategoryFormModal(0)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                افزودن به لیست
+            </button>
+        </div>
+
+    </div>
+</div>
+
+<!-- Main content -->
+<section class="content">
+
+    <div class="row">
+        <div class="col-12">
+            <div class="box">
+                <div class="box-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover no-wrap data_table" id="data-table-box">
+                            <thead>
+                                <tr class="bg-secondary">
+                                    <th>نام</th>
+                                    <th>عنوان</th>
+                                    <th>اولویت</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @if (Model != null)
+                                {
+                                    foreach (var item in Model)
+                                    {
+                                        <tr id="list-thing-@item.Id">
+                                            <td>@item.Name</td>
+                                            <td>@item.Title</td>
+                                            <td>@item.Order</td>
+                                            <td>
+
+                                                <button onclick="LoadPortfolioCategoryFormModal(@item.Id)" type="button" class="btn btn-warning">ویرایش</button>
+                                                <button onclick="DeletePortfolioCategory(@item.Id)" type="button" class="btn btn-danger">حذف</button>
+
+                                            </td>
+                                        </tr>
+                                    }
+
+
+
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<!-- /.content -->

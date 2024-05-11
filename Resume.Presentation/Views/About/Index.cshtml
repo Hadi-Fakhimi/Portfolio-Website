@@ -1,0 +1,110 @@
+﻿@model Resume.Domain.ViewModels.Page.IndexPageViewModel
+@using Resume.Domain.ViewModels.ItemIDo
+
+<!-- ============== start about area ================= -->
+<section>
+    <div class="container-lg">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="section-title text-center">
+                    <h2 class="mb-3 mt-3">درباره من:</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mt-4">
+                <div class="about-text p-3">
+                    <h3 class="mb-3">
+                        @Model.AboutMeView.title
+                    </h3>
+                    <p class="text-justify para">
+
+                        @Model.AboutMeView.paragraf1
+                    </p>
+                    <p class="text-justify para">
+
+                        @Model.AboutMeView.paragraf2
+                    </p>
+                </div>
+                <div class="row text-center my-3">
+                    @if (Model.ItemIDoList != null && Model.ItemIDoList.Any())
+                    {
+                        @foreach(ItemIDoViewModel item in Model.ItemIDoList)
+                        {
+                            <div class="col-sm-4">
+                                <div class="fact-item">
+                                    <h5 class="fs-3 fw-bold">@item.Number</h5>
+                                    <p class="text-muted fw-bold">@item.Name</p>
+                                </div>
+                            </div>
+                        }
+                    }
+                </div>
+                <div class="row">
+                    <div class="col-lg-12"></div>
+                </div>
+            </div>
+            <div class="col-md-6 mt-4">
+                <div class="row">
+                    @if (Model.ThingIDoList != null && Model.ThingIDoList.Any())
+                    {
+                        <partial name="_ThingIDoPartial" model="Model.ThingIDoList" />
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5 mb-5 bg-white">
+            <div class="col-lg-6 col-xl-6 mb-5">
+                @if(Model.CustomerFeedbackList != null && Model.CustomerFeedbackList.Any())
+                {
+                    <div id="carousel1" class="carousel slide mb-5">
+                        <div class="carousel-indicators">
+                            <button type="button"
+                                    data-bs-target="#carousel1"
+                                    data-bs-slide-to="0"
+                                    class="active bg-dark"
+                                    aria-current="true"
+                                    aria-label="Slide 1"></button>
+                            <button type="button"
+                                    data-bs-target="#carousel1"
+                                    data-bs-slide-to="1"
+                                    class="bg-dark"
+                                    aria-label="Slide 2 "></button>
+                            <button type="button"
+                                    data-bs-target="#carousel1"
+                                    data-bs-slide-to="2"
+                                    class="bg-dark"
+                                    aria-label="Slide 3"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <!-- start testi item -->
+                            @if (Model.CustomerFeedbackList != null && Model.CustomerFeedbackList.Any())
+                            {
+                                <partial name="_CustomerFeedbackPartial" model="Model.CustomerFeedbackList" />
+                            }
+                        </div>
+                    </div>
+                }
+            </div>
+            <div class="col-lg-6 justify-content-center">
+                
+                @if (Model.CustomerLogoList != null && Model.CustomerLogoList.Any())
+                {
+                    <h5>شرکت ها و موسسه ها:</h5>
+                    <div class="row">
+                        <partial name="_CustomerLogoPartial" model="Model.CustomerLogoList" />
+
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+

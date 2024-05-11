@@ -1,0 +1,39 @@
+﻿@{
+    var controllerName = ViewContext.RouteData.Values["Controller"].ToString();
+    var actionName = ViewContext.RouteData.Values["Action"].ToString();
+}
+
+
+
+<div class="main-menu" dir="ltr">
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand logo" asp-controller="Home" asp-action="Index"><img src="/Site/assets/img/logo.png" alt="logo">Fakhimi</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="ms-auto"></div>
+                <ul class="navbar-nav" dir="rtl">
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" asp-controller="Home" asp-action="Index"><button type="button" class="btn btn-light @(controllerName == "Home" && actionName == "Index" ? "active" : "")">خانه</button></a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " asp-controller="About" asp-action="Index"><button type="button" class="btn btn-light @(controllerName == "About" && actionName == "Index" ? "active" : "")">درباره من</button></a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " asp-controller="Resume" asp-action="Index"><button type="button" class="btn btn-light @(controllerName == "Resume" && actionName == "Index" ? "active" : "")">رزومه</button></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " asp-controller="Portfolio" asp-action="Index"><button type="button" class="btn btn-light @(controllerName == "Portfolio" && actionName == "Index" ? "active" : "")">نمونه کار ها</button></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " asp-controller="Contact" asp-action="Index"><button type="button" class="btn btn-light @(controllerName == "Contact" && actionName == "Index" ? "active" : "")">تماس با من</button></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>

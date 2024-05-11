@@ -1,0 +1,23 @@
+﻿@using Resume.Domain.ViewModels.Skill
+@model List<SkillViewModel>
+
+@foreach (SkillViewModel item in Model)
+{
+    <div class="skill-item m-4">
+        <h3 class="fs-6">@item.Title</h3>
+        <div class="progress">
+            <div class="progress-bar bg-dark"
+                 role="progressbar"
+                 style="width: @(item.Percent)%"
+                 aria-valuenow="25"
+                 aria-valuemin="0"
+                 aria-valuemax="100">
+                @(item.Percent)%
+            </div>
+        </div>
+    </div>
+
+}
+
+
+

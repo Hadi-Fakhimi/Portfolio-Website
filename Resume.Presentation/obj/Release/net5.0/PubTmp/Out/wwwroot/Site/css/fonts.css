@@ -1,0 +1,19 @@
+/* @font-faces:  */
+
+@font-face {
+    font-family:'shabnam' ;
+    src: url(../fonts/Shabnam-Light-FD.ttf);
+}
+@font-face {
+    font-family:'tas' ;
+    src: url(../fonts/EduTASBeginner-Medium.ttf);
+}
+@font-face {
+    font-family: 'vazir';
+    src: url(../fonts/Vazir-Medium-FD.ttf);
+}
+
+@font-face {
+    font-family: 'BebasNeue-Regular';
+    src: url(../fonts/BebasNeue-Regular.ttf);
+}

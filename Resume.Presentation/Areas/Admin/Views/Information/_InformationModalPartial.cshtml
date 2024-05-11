@@ -1,0 +1,202 @@
+﻿@model Resume.Domain.ViewModels.Information.CreateOrEditInformationViewModel
+
+@{
+    bool isCreate = Model.Id == 0 ? true : false;
+}
+
+
+<form id="InformationForm" asp-area="Admin" asp-controller="Information" asp-action="SubmitInformationFormModal"
+      data-ajax="true" data-ajax-begin="StartLoading()" data-ajax-success="InformationFormSubmited">
+
+    <div class="row">
+        <div class="col-12">
+            <input type="hidden" asp-for="Avatar" />
+            <input type="hidden" asp-for="ResumeFile" />
+            @if (!isCreate)
+            {
+                <input type="hidden" asp-for="Id" />
+            }
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">@(isCreate ? "افزودن" : "ویرایش")</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <div class="form-group">
+                    <label asp-for="Name"></label>
+                    <div class="controls">
+                        <input type="text" asp-for="Name" class="form-control">
+                    </div>
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Email"></label>
+                    <div class="controls">
+                        <input type="text" asp-for="Email" class="form-control">
+                    </div>
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Phone"></label>
+                    <div class="controls">
+                        <input type="text" asp-for="Phone" class="form-control">
+                    </div>
+                    <span asp-validation-for="Phone" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DateOfBirth"></label>
+                    <div class="controls">
+                        <input type="text" asp-for="DateOfBirth" class="form-control">
+                    </div>
+                    <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="InstagramAddress"></label>
+                    <div class="controls">
+                        <input type="text" asp-for="InstagramAddress" class="form-control">
+                    </div>
+                    <span asp-validation-for="InstagramAddress" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="TelegramAddress"></label>
+                    <div class="controls">
+                        <input type="text" asp-for="TelegramAddress" class="form-control">
+                    </div>
+                    <span asp-validation-for="TelegramAddress" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Job"></label>
+                    <div class="controls">
+                        <input type="text" asp-for="Job" class="form-control">
+                    </div>
+                    <span asp-validation-for="Job" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="MapSrc"></label>
+                    <div class="controls">
+                        <input type="text" asp-for="MapSrc" class="form-control">
+                    </div>
+                    <span asp-validation-for="MapSrc" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="image">آواتار</label>
+                    <div class="controls">
+                        <input type="file" name="image" id="image" class="form-control" />
+                    </div>
+                    <span asp-validation-for="Avatar" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="pdf">pdf</label>
+                    <div class="controls">
+                        <input type="file" name="pdf" id="pdf" class="form-control" />
+                    </div>
+                    <span asp-validation-for="ResumeFile" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-primary @(isCreate ? "btn-success" : "btn-warning")">@(isCreate ? "افزودن" : "ویرایش")</button>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">خروج</button>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+
+</form>
+
+<script>
+    $("#image").change(function () {
+
+        const imageFile = $('input#image')[0].files[0]
+
+        if (imageFile.name.split('.').pop() === "png" || imageFile.name.split('.').pop() === "svg" || imageFile.name.split('.').pop() === "jpg") {
+
+            const fd = new FormData();
+            fd.append("file", imageFile);
+
+            $.ajax({
+                type: "Post",
+                url: "/Admin/Information/UploadInformationAjaxImage",
+                enctype: "multipart/form-data",
+                data: fd,
+                beforeSend: function () {
+                    ShowMessage("اعلان", "لطفا تا انتهای بارگذاری صبر کنید ...", "info")
+                },
+                success: function (response) {
+                    if (response.status === "Success") {
+                        ShowMessage("اعلان", "فایل مورد نظر با موفقیت بارگذاری شد .", "success");
+                        $("#Avatar").val(response.imageName);
+                    }
+                    else if (response.status === "Error") {
+                        ShowMessage("خطا", "فرمت فایل باید svg ، jpg یا png باشد", "error")
+                    }
+                },
+                error: function () {
+                    ShowMessage("خطا", "در بارگذاری فایل خطایی رخ داده است .", "error")
+                },
+                cache: false,
+                contentType: false,
+                processData: false
+            })
+        }
+        else {
+            ShowMessage("خطا", "فرمت فایل باید jpg ، svg یا png باشد", "error")
+        }
+
+
+    });
+
+    $("#pdf").change(function () {
+
+        const pdfFile = $('input#pdf')[0].files[0]
+
+        if (pdfFile.name.split('.').pop() === "pdf") {
+
+            const fd = new FormData();
+            fd.append("file", pdfFile);
+
+            $.ajax({
+                type: "Post",
+                url: "/Admin/Information/UploadInformationAjaxPdf",
+                enctype: "multipart/form-data",
+                data: fd,
+                beforeSend: function () {
+                    ShowMessage("اعلان", "لطفا تا انتهای بارگذاری صبر کنید ...", "info")
+                },
+                success: function (response) {
+                    if (response.status === "Success") {
+                        ShowMessage("اعلان", "فایل مورد نظر با موفقیت بارگذاری شد .", "success");
+                        $("#ResumeFile").val(response.pdfName);
+                    }
+                    else if (response.status === "Error") {
+                        ShowMessage("خطا", "فرمت فایل باید pdf باشد", "error")
+                    }
+                },
+                error: function () {
+                    ShowMessage("خطا", "در بارگذاری فایل خطایی رخ داده است .", "error")
+                },
+                cache: false,
+                contentType: false,
+                processData: false
+            })
+        }
+        else {
+            ShowMessage("خطا", "فرمت فایل باید pdf باشد", "error")
+        }
+
+
+    });
+</script>
+
+
+
+
+

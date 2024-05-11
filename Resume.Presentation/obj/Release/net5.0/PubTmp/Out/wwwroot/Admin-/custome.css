@@ -1,0 +1,20 @@
+﻿div.dt-container div.dt-layout-cell .dt-start{
+
+    text-align:right;
+}
+
+.dt-search {
+    text-align: left !important;
+}
+.dt-paging{
+    text-align: left !important;
+}
+.dt-length{
+    text-align:right !important;
+}
+.dt-info {
+    text-align: right !important;
+}
+.dt-search label {
+    padding-left: 1rem;
+}

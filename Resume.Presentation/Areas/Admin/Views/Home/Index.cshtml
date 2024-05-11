@@ -1,0 +1,110 @@
+﻿@model List<MessageViewModel>
+@using Resume.Domain.ViewModels.Message
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="d-flex align-items-center">
+        <div class="mr-auto">
+            <h3 class="page-title">Blank page</h3>
+            <div class="d-inline-block align-items-center">
+                <nav>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#"><i class="mdi mdi-home-outline"></i></a></li>
+                        <li class="breadcrumb-item" aria-current="page">Sample Page</li>
+                        <li class="breadcrumb-item active" aria-current="page">Blank page</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <div class="right-title">
+            <div class="dropdown">
+                <button class="btn btn-outline dropdown-toggle no-caret" type="button" data-toggle="dropdown"><i class="mdi mdi-dots-horizontal"></i></button>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="#"><i class="mdi mdi-share"></i>Activity</a>
+                    <a class="dropdown-item" href="#"><i class="mdi mdi-email"></i>Messages</a>
+                    <a class="dropdown-item" href="#"><i class="mdi mdi-help-circle-outline"></i>FAQ</a>
+                    <a class="dropdown-item" href="#"><i class="mdi mdi-settings"></i>Support</a>
+                    <div class="dropdown-divider"></div>
+                    <button type="button" class="btn btn-success">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Main content -->
+<section class="content">
+
+    <!-- Default box -->
+    <div class="box">
+        <div class="box-header with-border">
+            <h3 class="box-title">پیام های شما</h3>
+
+            <ul class="box-controls pull-right">
+                <li><a class="box-btn-close" href="#"></a></li>
+                <li><a class="box-btn-slide" href="#"></a></li>
+                <li><a class="box-btn-fullscreen" href="#"></a></li>
+            </ul>
+        </div>
+        <div class="box-body">
+            <!-- Main content -->
+            <section class="content">
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="box">
+                            <div class="box-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover no-wrap data_table" id="data-table-box">
+                                        <thead>
+                                            <tr class="bg-secondary">
+                                                <th>نام</th>
+                                                <th>متن پیام</th>
+                                                <th>ایمیل</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            @if (Model != null && Model.Any())
+                                            {
+                                                foreach (var item in Model)
+                                                {
+
+                                                    <tr id="list-thing-@item.Id">
+                                                        <td>@item.Name</td>
+                                                        <td>@item.MessageContact</td>
+                                                        <td>@item.Email</td>
+                                                        <td>
+                                                            <button onclick="DeleteMessage(@item.Id)" type="button" class="btn btn-danger">حذف</button>
+
+                                                        </td>
+                                                    </tr>
+                                                }
+
+
+
+
+                                            }
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+            <!-- /.content -->
+
+        </div>
+        <!-- /.box-body -->
+        <div class="box-footer">
+            Footer
+        </div>
+        <!-- /.box-footer-->
+    </div>
+    <!-- /.box -->
+
+</section>
+<!-- /.content -->

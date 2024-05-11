@@ -1,0 +1,76 @@
+﻿@model List<ThingIDoListViewModel>
+@using Resume.Domain.ViewModels.ThingIDo
+
+@{
+    ViewData["Title"] = "لیست کار های که انجام میدهم";
+}
+
+
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="d-flex align-items-center">
+        <div class="mr-auto">
+            <h3 class="page-title">@ViewData["Title"]</h3>
+        </div>
+        <div class="right-title">
+            <!-- Button trigger modal -->
+            <button type="button" onclick="LoadThingIDoFormModal(0)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                افزودن به لیست
+            </button>
+        </div>
+
+    </div>
+</div>
+
+<!-- Main content -->
+<section class="content">
+
+    <div class="row">
+        <div class="col-12">
+            <div class="box">
+                <div class="box-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover no-wrap data_table" id="data-table-box">
+                            <thead>
+                                <tr class="bg-secondary">
+                                    <th>عنوان</th>
+                                    <th>عرض ستون</th>
+                                    <th>آیکون</th>
+                                    <th>الویت</th>
+                                    <th>توضیحات</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @if (Model != null && Model.Any())
+                                {
+                                    @foreach (ThingIDoListViewModel item in Model)
+                                    {
+                                        <tr id="list-thing-@item.Id">
+                                            <td>@item.Title</td>
+                                            <td>@item.Col_lg</td>
+                                            <td>@item.Icon</td>
+                                            <td>@item.Order</td>
+                                            <td>@item.description</td>
+
+                                            <td>
+
+                                                <button onclick="LoadThingIDoFormModal(@item.Id)" type="button" class="btn btn-warning">ویرایش</button>
+                                                <button onclick="DeleteThingIDo(@item.Id)" type="button" class="btn btn-danger">حذف</button>
+
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<!-- /.content -->

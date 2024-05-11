@@ -1,0 +1,120 @@
+﻿@using Resume.Domain.ViewModels.Information
+@model Resume.Domain.ViewModels.Message.CreateMessageViewModel
+@{
+    bool? formSubmitResult = ViewData["FormSubmitResult"] as bool?;
+
+    var information = ViewData["Information"] as InformationViewModel;
+}
+@section Script {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <partial name="_CaptchaScriptPartial" />
+    <script src="~/lib/sweet-alert-2/sweetalert2.all.min.js"></script>
+
+    @if (formSubmitResult != null && formSubmitResult == true)
+    {
+        <script>
+            Swal.fire({
+                icon: "success",
+                title: "موفق",
+                text: "پیام شما با موفقیت ارسال شد",
+                confirmButtonText: "باشه"
+            });
+           
+
+        </script>
+        <script>
+            document.getElementById("Name").value = "";
+            document.getElementById("Email").value = "";
+            document.getElementById("MessageContact").value = "";
+        </script>
+    }
+    else if (formSubmitResult != null && formSubmitResult == false)
+    {
+        <script>
+            Swal.fire({
+                icon: "warning",
+                title: "ناموفق",
+                text: "recaptcha شما تایید نشد دوباره تلاش کنید",
+                confirmButtonText: "باشه"
+            });
+        </script>
+    }
+   
+
+}
+<section class="contact-us-area" id="contact-us">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="section-title text-center">
+                    <h2 class="mb-3 mt-3">تماس با من:</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-sm-12 mb-3">
+                <form asp-controller="Contact" asp-action="Index" method="post">
+                    <input type="hidden" asp-for="Captcha" />
+                    <div class="mb-3">
+                        <input asp-for="Name"
+                               class="form-control text-input"
+                               placeholder="لطفا نام خود را وارد کنید"
+                               required />
+                        <span class="text-danger p-2" asp-validation-for="Name"></span>
+                    </div>
+                    <div class="mb-3">
+                        <input asp-for="Email"
+                               class="form-control text-input"
+                               placeholder="لطفا ایمیل خود را وارد کنید "
+                               required />
+                        <span class="text-danger p-2" asp-validation-for="Email"></span>
+                    </div>
+                    <div class="mb-3">
+                        <textarea asp-for="MessageContact" class="form-control text-input"
+                                  rows="5"
+                                  placeholder="پیام خود را بنویسید"
+                                  required></textarea>
+
+                        <span class="text-danger p-2" asp-validation-for="MessageContact"></span>
+                    </div>
+                    <button type="submit" class="btn button btn-outline-secondary">
+                        پیامتو بفرس رفیق
+                    </button>
+                </form>
+            </div>
+            <div class="col-md-6 col-sm-12 border-info" dir="ltr">
+                @if (!string.IsNullOrEmpty(information.MapSrc))
+                {
+                    <div class="row m-4">
+                        <iframe src="@information.MapSrc" width="450" height="300" style="border-radius:2rem;border:none;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                }
+
+                <div class="row">
+                    @if (!string.IsNullOrEmpty(information.TelegramAddress))
+                    {
+                        <p class="brand-logo text-center">
+                            <i class="fa-brands fa-telegram"></i> @information.TelegramAddress
+                        </p>
+                    }
+                    @if (!string.IsNullOrEmpty(information.InstagramAddress))
+                    {
+
+                        <p class="brand-logo text-center">
+                            <i class="fa-brands fa-instagram"></i> @information.InstagramAddress
+                        </p>
+                    }
+                    @if (!string.IsNullOrEmpty(information.TelegramAddress))
+                    {
+
+                        <p class="brand-logo text-center">
+                            <i class="fa-solid fa-envelope"></i> @information.Email
+                        </p>
+                    }
+             
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

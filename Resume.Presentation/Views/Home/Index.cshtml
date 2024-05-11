@@ -1,0 +1,81 @@
+﻿@using Resume.Application.StaticTools
+@model Resume.Domain.ViewModels.Page.HomePageViewModel
+<!-- ============== start hero area ================= -->
+
+<section class="banner" id="profile">
+    <div class="container">
+        <div class="row section">
+            <div class="col-lg-6 col-md-12">
+                <img src="@(string.IsNullOrEmpty(Model.informationView.Avatar) ? FilePaths.DefaultAvatar : $"{FilePaths.AvatarImg}{Model.informationView.Avatar}")"
+                     class="img-fluid banner-img"
+                     alt="banner" />
+            </div>
+            <div class="col-lg-6 col-md-12 site-title align-content-center">
+
+                @if (!string.IsNullOrEmpty(Model.informationView.Name))
+                {
+                    <h3 class="title-text">سلام من</h3>
+                    <h1 class="title-text">@Model.informationView.Name هستم</h1>
+                }
+                <div class="text-animate">
+                    <h3 class="head-3">Full Stack Developer</h3>
+                </div>
+                @if (!string.IsNullOrEmpty(Model.informationView.Job))
+                {
+                    <div class="info-title">
+                        @Model.informationView.Job
+                    </div>
+                }
+
+                <div class="info-para">
+                    @if (!string.IsNullOrEmpty(Model.informationView.DateOfBirth))
+                    {
+                        <div><i class="fa-regular fa-calendar social-icon"></i>@Model.informationView.DateOfBirth</div>
+                    }
+
+                    @if (!string.IsNullOrEmpty(Model.informationView.Address))
+                    {
+                        <div><i class="fa-solid fa-location-dot social-icon"></i>@Model.informationView.Address</div>
+                    }
+
+                    @if (!string.IsNullOrEmpty(Model.informationView.Email))
+                    {
+                        <div><i class="fa-regular fa-envelope social-icon"></i>@Model.informationView.Email</div>
+                    }
+
+                    @if (!string.IsNullOrEmpty(Model.informationView.Phone))
+                    {
+                        <div><i class="fa-solid fa-mobile social-icon"></i>@Model.informationView.Phone</div>
+                    }
+
+                </div>
+
+                <div class="d-flex flex-row flex-wrap">
+                    
+                    <button  type="button" class="btn button btn-dark mr-4">
+                        <a style="text-decoration:none; color:white;" asp-controller="Contact" asp-action="Index">تماس با من</a>
+                    </button>
+                    @if (!string.IsNullOrEmpty(Model.informationView.ResumeFile))
+                    {
+                        <button type="button" class="btn button btn-outline-secondary">
+                            <a download href="@($" {FilePaths.Resume}{Model.informationView.ResumeFile}")">
+                                <i class="fa-solid fa-download"></i>
+                                رزومه را بارگیری کنید
+                            </a>
+                        </button>
+                    }
+                </div>
+                <div class="social-media mt-3">
+
+
+                    @if (Model.SocialMediaList != null && Model.SocialMediaList.Any())
+                    {
+                        <partial name="_SocialMediaPartial" model="Model.SocialMediaList" />
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============== end hero area ================= -->

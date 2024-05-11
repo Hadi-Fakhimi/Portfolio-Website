@@ -1,0 +1,142 @@
+@media screen and (max-width:1200px) {
+    .header-area .main-menu .navbar{
+
+        padding: 1rem 1.5rem;
+    }
+    
+    .site-main .section{
+        padding-top: 7rem;
+        padding-bottom: 3rem;
+    }
+}
+@media screen and (max-width:991px) {
+    .header-area .main-menu .navbar{
+
+        padding: 0.9rem 1.3rem;
+    }
+}
+@media screen and (max-width:768px) {
+
+    .site-main .section{
+        padding-top: 2rem;
+        padding-bottom: 0;
+    }
+    .header-area .main-menu .navbar{
+
+        padding: 0.6rem 0.5rem;
+    }
+    .site-title{
+        padding-right: 3rem;
+        padding-bottom: 1rem;
+    }
+    .skill div{
+        font-size: 1.2rem;
+    }
+    .button{
+        margin-top: 0.3rem;
+    }
+    
+}
+@media screen and (max-width:431px) {
+    .site-main .section{
+        padding-bottom: 0;
+    }
+
+    .site-main .text-animate{
+
+        width: 13.3rem;
+    }
+    @keyframes homeBgText{
+        0%,10%,100%{
+            background-position: -13.3rem 0;
+        }
+        65%,85%{
+            background-position: 0 0;
+        }
+    }
+    .site-main .banner .site-title .text-animate h3{
+
+        font-size: 1.1rem;
+        background-position: -13.3rem 0;
+    }
+
+    .section div img{
+        padding: 0 2rem;
+    }
+    
+    .header-area .main-menu .navbar{
+        padding: 0.6rem 0.5rem;
+    }
+    .header-area .main-menu .navbar .navbar-brand{
+
+        padding: 0;
+    }
+    .site-main .section{
+        padding-left: 0.7rem;
+        padding-right: 0.7rem;
+        padding-top: 2rem;
+    
+    }
+    .site-main .about-area{
+        padding-left:1rem ;
+        padding-right: 1rem;
+    }
+    .site-main .site-title h4{
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .site-main .about-area .about-title{
+        padding: 0.2rem 0;
+    }
+    .site-title{
+        padding-bottom: 1rem;
+    }
+}
+@media screen and (max-width:281px) {
+
+
+    .header-area .main-menu .navbar .navbar-brand{
+
+        padding: 0.3rem 0.4rem;
+    }
+    .logo{
+        font-size: 1.3rem;
+        font-weight: 600;
+    }
+    .navbar-toggler-icon{
+        height: 1rem;
+        width: 1rem;
+    }
+    .site-main .section{
+        padding-top: 2rem;
+        padding-right:0.6rem;
+        padding-left: 0.6rem;
+    }
+    .site-main .about-area{
+
+        padding: 1rem 0.6rem;
+    }
+    .para{
+        font-size: 0.9rem;
+        margin: 0;
+        padding: 0;
+    }
+    .site-title{
+        padding-right: 0.6rem;
+    }
+    .section div img{
+        padding: 0;
+    }
+    .det-card{
+        justify-content: center;
+    }
+    .det-card button{
+        padding: 0.25rem 3.5rem;
+    }
+    .footer{
+        justify-content: center;
+
+    }
+    
+}

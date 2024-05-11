@@ -1,0 +1,17 @@
+﻿@using Resume.Domain.ViewModels.CustomerLogo
+@using Resume.Application.StaticTools
+@model List<CustomerLogoListViewModel>
+
+<div class="row">
+    @foreach(CustomerLogoListViewModel item in Model)
+    {
+        <div class="col-lg-1">
+            
+        </div>
+        <div class="col-2">
+            <a href="@item.Link"><img class="cop-img" src="@(FilePaths.CustomerLogoImg + item.Logo)" alt="@item.LogoAlt" /></a>
+        </div>
+    }
+</div>
+
+
