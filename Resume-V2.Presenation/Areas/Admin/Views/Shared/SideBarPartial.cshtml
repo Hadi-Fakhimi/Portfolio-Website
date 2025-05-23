@@ -1,0 +1,101 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<aside class="sidebar-left border-right bg-white shadow" id="leftSidebar" data-simplebar="init">
+    <div class="simplebar-wrapper" style="margin: 0px;">
+        <div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer"></div></div><div class="simplebar-mask">
+            <div class="simplebar-offset" style="left: 0px; bottom: 0px;">
+                <div class="simplebar-content-wrapper" style="height: 100%; overflow: hidden scroll;">
+                    <div class="simplebar-content" style="padding: 0px;">
+                        <a href="#" class="btn collapseSidebar toggle-btn d-lg-none text-muted ml-2 mt-3" data-toggle="toggle">
+                            <i class="fe fe-x"><span class="sr-only"></span></i>
+                        </a>
+                        <nav class="vertnav navbar navbar-light">
+
+                            <!-- nav bar -->
+                            <div class="w-100 mb-4 d-flex">
+
+
+                                <a class="navbar-brand mx-auto mt-2 flex-fill text-center">
+
+                                    <img id="logo" class="navbar-brand-img brand-sm" src="/Site/assets/images/logo.png" />
+
+                                </a>
+
+                            </div>
+
+                            <ul class="navbar-nav flex-fill w-100 mb-2">
+                                <li class="nav-item dropdown">
+                                    <a href="#information" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle nav-link">
+                                        <i class="fe fe-monitor fe-16"></i>
+                                        <span class="ml-3 item-text"></span><span class="sr-only">(current)</span>
+                                    </a>
+                                    <ul class="list-unstyled pl-4 w-100 collapse show" id="information">
+                                        <li>
+                                            <div dir="rtl" class="card text-bg-primary bg-light mb-3" style="max-width: 18rem;">
+                                                <div class="card-body">
+                                                    <h6 class="card-title text-primary-dark">پنل  ادمین</h6>
+                                                    <p class="card-text"> هادی فخیمی</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a href="#dashboard" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+                                        <i class="fe fe-home fe-16"></i>
+                                        <span class="ml-3 item-text">داشبورد</span><span class="sr-only">(current)</span>
+                                    </a>
+                                    <ul class="collapse list-unstyled pl-4 w-100" id="dashboard">
+                                        <li class="nav-item active">
+                                            <a asp-controller="AboutMe" asp-action="Index" class="nav-link pl-3"><span class="ml-1 item-text">درباره من</span></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link pl-3" href="./dashboard-analytics.html"><span class="ml-1 item-text">Analytics</span></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link pl-3" href="./dashboard-sales.html"><span class="ml-1 item-text">E-commerce</span></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link pl-3" href="./dashboard-saas.html"><span class="ml-1 item-text">Saas Dashboard</span></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link pl-3" href="./dashboard-system.html"><span class="ml-1 item-text">Systems</span></a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li class="nav-item dropdown">
+                                    <a href="#Users" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+                                        <i class="fe fe-users fe-16"></i>
+                                        <span class="ml-3 item-text">کاربران</span><span class="sr-only">(current)</span>
+                                    </a>
+                                    <ul class="collapse list-unstyled pl-4 w-100" id="Users">
+                                        <li class="nav-item">
+                                            <a class="nav-link pl-3"><span class="ml-1 item-text">لیست کاربران</span></a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a href="#Setting" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+                                        <i class="fe fe-settings fe-16"></i>
+                                        <span class="ml-3 item-text">تنظیمات</span><span class="sr-only">(current)</span>
+                                    </a>
+                                    <ul class="collapse list-unstyled pl-4 w-100" id="Setting">
+
+                                        <li class="nav-item">
+                                            <a class="nav-link pl-3" asp-action="SiteSetting" asp-controller="Admin"><span class="ml-1 item-text">تنظیمات سایت</span></a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+
+
+
+
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div><div class="simplebar-placeholder" style="width: 152px; height: 1129px;"></div>
+    </div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: visible;"><div class="simplebar-scrollbar" style="height: 394px; transform: translate3d(0px, 0px, 0px); display: block;"></div></div>
+</aside>

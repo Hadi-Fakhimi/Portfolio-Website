@@ -1,0 +1,10 @@
+.pagenation-link-page > span {
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #adb5bd;
+    background-color: transparent;
+    border: 1px solid transparent;
+}

@@ -1,0 +1,46 @@
+﻿@using Resume_V2.Application.DTOs
+@using Resume_V2.Application.Extensions
+@using Resume_V2.Application.StaticTools
+@inject PanelLayoutScope scope
+@{
+    var socialMedias = scope.GetSocialMedia().Result;
+    var information = scope.GetInformation().Result;
+}
+
+<div class="toggle-menu">
+    <!-- Close button -->
+    <button class="toggle-close">
+        <i class="bi bi-x"></i>
+    </button>
+    <!-- end Close button -->
+    <h6 class="mono-heading fw-normal mb-2">تلفن:</h6>
+    <h4 class="fw-medium show-number-ltr">@information.Phone</h4>
+    <div class="mt-4">
+        <h6 class="mono-heading fw-normal mb-2">ایمیل:</h6>
+        <h4 class="fw-medium">@information.Email</h4>
+        <ul class="list-inline-sm mt-3">
+            @foreach (var item in socialMedias)
+            {
+                <li>
+                    <a class="button-circle button-circle-sm" href="@item.Link">
+                        <i class="@item.Icon"></i>
+                    </a>
+                </li>
+            }
+
+        </ul>
+    </div>
+    <div class="mt-4 mt-lg-5">
+        <ul class="list-circle">
+            <li>
+                <a href="@(FilePaths.CvPdf + information.ResumeFile)" class="mono-heading link-decoration">دانلود CV</a>
+            </li>
+            <li>
+                <button id="darkModeToggle" class="mono-heading link-decoration">دارک مود</button>
+            </li>
+        </ul>
+    </div>
+    <div class="tm-bottom">
+        <p>&copy; هادی فخیمی</p>
+    </div>
+</div>

@@ -1,0 +1,493 @@
+﻿@using Resume_V2.Application.DTOs
+@using Resume_V2.Application.StaticTools
+@using Resume_V2.Domain.Models
+@model MessageViewModel
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "رزومه هادی فخیمی";
+
+
+    var aboutMe = ViewData["AboutMeView"] as AboutMeViewModel;
+    var itemList = ViewData["ItemListView"] as List<ItemViewModel>;
+    var skillList = ViewData["SkillListView"] as List<SkillViewModel>;
+    var portfolioCategoryList = ViewData["PortfolioCategoryList"] as List<PortfolioCategoryViewModel>;
+    var portfolioList = ViewData["PortfolioList"] as List<PortfolioViewModel>;
+    var thingIDoList = ViewData["ThingIDoList"] as List<ThingIDoViewModel>;
+    var customerFeedbackList = ViewData["CustomerFeedbackList"] as List<CustomerFeedbackViewModel>;
+    var customerLogoList = ViewData["CustomerLogoList"] as List<CustomerLogoViewModel>;
+    var educationList = ViewData["EducationList"] as List<EducationViewModel>;
+    var experienceList = ViewData["ExperiencList"] as List<ExperienceViewModel>;
+    var information = ViewData["InformationView"] as InformationViewModel;
+    var blogList = ViewData["BlogListView"] as List<BlogViewModel>;
+    
+
+}
+
+<!-- About section -->
+<div class="section-box" id="about">
+    <div class="row g-4 g-xl-5">
+        <div class="col-12 col-xl-4">
+            <!-- Hero Avatar -->
+            <div class="hero-avatar">
+                @if (aboutMe.AvatarImage != null)
+                {
+                    <img src="@(FilePaths.UserAvatarImg + aboutMe.AvatarImage)"
+                         alt=""
+                         data-rjs="2" />
+                }
+
+                <div class="hero-avatar-text">
+                    @if (aboutMe.Name != null)
+                    {
+                        <span class="typer"
+                              id="typer1"
+                              data-words="سلام!, من @aboutMe.Name هستم"
+                              data-delay="50"
+                              data-deleteDelay="1500">
+                        </span>
+
+                        <span class="cursor" data-owner="typer1"></span>
+
+                    }
+                </div>
+            </div>
+            <!-- end Hero Avatar -->
+        </div>
+        <div class="col-12 col-xl-8">
+            <h6 class="title-heading mb-4" data-backdrop-text="درباره من">
+                درباره من
+            </h6>
+            <h1>@aboutMe.Title</h1>
+            <ul class="list-inline-pills mt-3">
+                @if (skillList != null)
+                {
+
+                    @foreach (var item in skillList)
+                    {
+                        <li>
+                            <i class="@item.Icon ps-2"></i> @item.AbilityName
+                            <div class="d-inline-block font-family-mono font-small">
+                                (<span class="counter">@item.Percent</span>%)
+                            </div>
+                        </li>
+                    }
+                }
+
+            </ul>
+            @if (aboutMe.Description != null)
+            {
+                <p class="mt-1">
+                    @aboutMe.Description
+                </p>
+            }
+        </div>
+    </div>
+    <!-- end row -->
+    <div class="row g-4 mt-1">
+        @if (itemList != null)
+        {
+            @foreach (var item in itemList)
+            {
+                <div class="col-12 col-xl-4">
+                    <div class="d-flex align-items-center">
+                        <div class="d-inline-block">
+                            <h1 class="font-family-mono fw-semi-bold stroke-text display-4">
+                                <span class="counter">@item.Count</span>
+                            </h1>
+                        </div>
+                        <div class="d-inline-block pe-2">
+                            <h4 class="line-height-100 fw-normal mb-0">+</h4>
+                            <p class="mono-heading">@item.ItemName</p>
+                        </div>
+                    </div>
+                </div>
+
+            }
+        }
+
+    </div>
+    <!-- end row -->
+</div>
+<!-- end section-box -->
+<!-- end About section -->
+<!-- Portfolio section -->
+<div class="section-box mt-4" id="portfolio">
+    <div class="row">
+        <div class="col-12 col-md-10 col-xl-8">
+            <h6 class="title-heading mb-3"
+                data-backdrop-text="نمونه کارها">
+                نمونه کارها
+            </h6>
+            <h1>پروژه های اخیر من</h1>
+            <p>
+                در این بخش می توانید به نمونه کار های اخیر من دسترسی داشته باشید
+            </p>
+        </div>
+    </div>
+    <div class="filter mt-4 mt-lg-5 mb-3">
+        <ul>
+            <li data-filter="all">نمایش همه</li>
+            @if (portfolioCategoryList != null)
+            {
+                @foreach (var item in portfolioCategoryList)
+                {
+                    <li data-filter=".@item.Name">@item.Title</li>
+                }
+            }
+        </ul>
+    </div>
+    <!-- end Portfolio Filter -->
+    <div class="row g-4 portfolio-grid">
+        <!-- Portfolio Item 1 -->
+        @if (portfolioList != null)
+        {
+            @foreach (var item in portfolioList)
+            {
+                <div class="col-12 col-xl-6 portfolio-item @item.PortfoioCategoryName">
+                    <div class="portfolio-box">
+                        <!-- Image -->
+                        <img src="@(FilePaths.PortfolioImg + item.Image)"
+                             alt="@item.ImageAlt"
+                             data-rjs="2" />
+                        <!-- Category -->
+                        <span class="portfolio-category">@item.PortfoioCategoryTitle</span>
+                        <!-- Caption -->
+                        <div class="portfolio-caption">
+                            <h1><a href="/Portfolio/@item.Id">@item.Title</a></h1>
+                        </div>
+                    </div>
+                    <!-- end portfolio-box -->
+                </div>
+            }
+        }
+    </div>
+    <!-- end row -->
+</div>
+<!-- end section-box -->
+<!-- end Portfolio section -->
+<!-- Services section -->
+<div class="section-box mt-4" id="services">
+    <div class="row">
+        <div class="col-12 col-md-10 col-xl-8">
+            <h6 class="title-heading mb-3" data-backdrop-text="خدمات">
+                خدمات
+            </h6>
+            <h1>کاری که من انجام می دهم</h1>
+            <p>
+                در این بخش خدماتی که من ارائه میدهم را ذکر میکنم
+            </p>
+        </div>
+    </div>
+    <div class="mt-4 mt-lg-5">
+        <ul class="services-list">
+
+            <!-- Services Item 1 -->
+            @{
+                var count = 0;
+            }
+            @if (thingIDoList != null)
+            {
+                @foreach (var item in thingIDoList)
+                {
+                    count++;
+
+                    <li class="services-item">
+                        <div class="services-number">
+                            <h1 class="font-family-mono fw-semi-bold stroke-text display-4">
+                                0@(count)
+                            </h1>
+                        </div>
+                        <div class="services-title icon-xl">
+                            <i class="@item.Icon"></i>
+                            <h6 class="mono-heading">@item.Title</h6>
+                        </div>
+                        <div>
+                            <p>
+                                @item.description
+                            </p>
+                        </div>
+                    </li>
+                }
+
+            }
+        </ul>
+    </div>
+</div>
+<!-- end section-box -->
+<!-- end Services section -->
+<!-- Testimonial section -->
+<div class="section-box mt-4" id="testimonial">
+    <div class="row align-items-center">
+        <div class="col-6">
+            <h6 class="title-heading mb-0" data-backdrop-text="مشتریان">
+                آنچه مردم می گویند
+            </h6>
+        </div>
+        <div class="col-6 text-start">
+            <!-- Slider Navigation -->
+            <div class="button-circle button-circle-sm button-circle-outline swiper-custom-prev">
+                <i class="bi bi-arrow-right"></i>
+            </div>
+            <div class="button-circle button-circle-sm button-circle-outline swiper-custom-next">
+                <i class="bi bi-arrow-left"></i>
+            </div>
+            <!-- end Slider Navigation -->
+        </div>
+    </div>
+    <!-- end row -->
+    <div class="swiper testimonial-swiper mt-4">
+        <div class="swiper-wrapper">
+            <!-- Swiper item 3 -->
+            @if (customerFeedbackList != null)
+            {
+                @foreach (var item in customerFeedbackList)
+                {
+                    <div class="swiper-slide">
+                        <div class="testimonial-box">
+                            <div class="d-block text-yellow mb-3">
+
+                                @for (int i = 0; i < item.FeedbackScore; i++)
+                                {
+                                    <i class="bi bi-star-fill"></i>
+                                }
+
+
+                            </div>
+                            <p>
+
+                                @item.Description
+
+                            </p>
+                        </div>
+                        <div class="d-flex align-items-center mt-3">
+                            <div class="d-inline-block ms-3">
+                                <img class="img-mask-avatar-sm"
+                                     src="@(FilePaths.CustomerFeedbackImg + item.Avatar)"
+                                     alt=""
+                                     data-rjs="2" />
+                            </div>
+                            <div class="d-inline-block">
+                                <h5 class="fw-medium m-0 line-height-140">
+                                    @item.Name
+                                </h5>
+                                <span class="font-small fw-normal"> @item.AboutJob </span>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+        <!-- end swiper-wrapper -->
+    </div>
+    <!-- end swiper -->
+</div>
+<!-- end section-box -->
+<!-- end Testimonial section -->
+<!-- Resume section -->
+<div class="section-box mt-4" id="resume">
+    <div class="row">
+        <div class="col-12 col-md-10 col-xl-8">
+            <h6 class="title-heading mb-3" data-backdrop-text="رزومه">
+                رزومه
+            </h6>
+            <h1>تحصیلات و تجربیات</h1>
+            <p>
+                در بخش می تواند مقاطع تحصیلی و تجربیات من رو مشاهده کنید
+            </p>
+        </div>
+    </div>
+    <div class="row g-4 g-lg-5 mt-0">
+        <div class="col-12 col-xl-6">
+            <div class="resume-wrapper">
+                <div class="icon-2xl mb-3">
+                    <i class="bi bi-mortarboard line-height-100"></i>
+                </div>
+                <!-- Education box 1 -->
+                @if (educationList != null)
+                {
+                    @foreach (var item in educationList)
+                    {
+                        <div class="resume-box">
+                            <span class="resume-date">@item.StartDate - @item.EndDate</span>
+                            <h5 class="fw-medium">@item.Title</h5>
+                            <span>@@ @item.Description</span>
+                        </div>
+                    }
+                }
+
+            </div>
+        </div>
+        <div class="col-12 col-xl-6">
+            <div class="resume-wrapper">
+                <div class="icon-2xl mb-3">
+                    <i class="bi bi-briefcase line-height-100"></i>
+                </div>
+                <!-- Employment box 1 -->
+                @if (experienceList != null)
+                {
+                    @foreach (var item in experienceList)
+                    {
+                        <div class="resume-box">
+                            <span class="resume-date">@item.StartDate - @item.EndDate</span>
+                            <h5 class="fw-medium">@item.Title</h5>
+                            <span>@@ @item.Description</span>
+                        </div>
+                    }
+                }
+
+            </div>
+        </div>
+    </div>
+    <!-- end row -->
+</div>
+<!-- end section-box -->
+<!-- end Resume section -->
+<!-- Clients section -->
+<div class="section-box mt-4" id="clients">
+    <h6 class="title-heading mb-4" data-backdrop-text="حامیان من">
+        حامیان من
+    </h6>
+    <div class="swiper clients-swiper">
+        <div class="swiper-wrapper">
+            <!-- Client box 1 -->
+            @if (customerLogoList != null)
+            {
+                @foreach (var item in customerLogoList)
+                {
+                    <div class="swiper-slide client-box">
+                        <a href="@item.Link">
+                            <img src="@(FilePaths.CustomerLogoImg + item.Logo)"
+                                 alt="@item.LogoAlt"
+                                 data-rjs="2" />
+                        </a>
+                    </div>
+                }
+            }
+
+        </div>
+    </div>
+</div>
+<!-- end section-box -->
+<!-- end Clients section -->
+<!-- Blog section -->
+<div class="section-box mt-4" id="blog">
+    <div class="row">
+        <div class="col-12 col-md-10 col-xl-8">
+            <h6 class="title-heading mb-3" data-backdrop-text="وبلاگ">
+                وبلاگ
+            </h6>
+            <h1>آخرین پست های وبلاگ</h1>
+            <p>
+                در این بخش میتوانید به مطالب جالبی از حوزه برنامه نویسی و دنیای تکنولوژی دست پیدا کنید
+            </p>
+        </div>
+    </div>
+    <div class="mt-4 mt-lg-5">
+        <!-- Blog Post box 1 -->
+        @if (blogList != null)
+        {
+            foreach (var item in blogList)
+            {
+                <div class="blog-post-box">
+                    <div class="blog-post-img">
+                        <a href="/Blog/@item.Id">
+                            <img src="@(FilePaths.BlogImg+item.Image)" alt="" />
+                        </a>
+                        <div class="blog-post-category">
+                            <a href="/Blog/@item.Id">@item.CategoryName</a>
+                        </div>
+                    </div>
+                    <div class="blog-post-caption">
+                        <p class="mb-2">منتشر شده در @item.Date</p>
+                        <h2>
+                            <a class="link-decoration" href="/Blog/@item.Id">@item.Title</a>
+                        </h2>
+                        <a class="button button-sm button-outline mt-2" href="/Blog/@item.Id">
+                            بیشتر بخوانید
+                        </a>
+                    </div>
+                </div>
+            }
+        }
+
+    </div>
+</div>
+<!-- end section-box -->
+<!-- end Blog section -->
+<!-- Contact section -->
+<div class="section-box mt-4" id="contact">
+    <div class="row">
+        <div class="col-12 col-md-10 col-xl-8">
+            <h6 class="title-heading mb-3"
+                data-backdrop-text="تماس با من">
+                در تماس باشید
+            </h6>
+            <h1>با من در ارتباط باشید</h1>
+            <p>
+                در این بخش می توانید با من در تماس باشید
+            </p>
+            <ul class="list-inline-pills mt-4">
+                 @if (information.Phone != null)
+                {
+                    <li>
+                        تلفن:
+                        <span class="show-number-ltr"> @information.Phone</span>
+                    </li>
+                }
+                @if (information.Email != null)
+                {
+                    <li>ایمیل: @information.Email</li>
+                }
+                @if (information.Address != null)
+                {
+                    <li>آدرس: @information.Address</li>
+                }
+            </ul>
+        </div>
+    </div>
+    <!-- end row -->
+    <div class="mt-4 mt-lg-5">
+        <!-- Contact Form -->
+        <div class="contact-form">
+            <form asp-action="Index" method="post">
+                <input id="Captcha" type="hidden" asp-for="Captcha" />
+                <div class="row gx-3 gy-0">
+                    <div class="col-12 col-md-6">
+                        <input asp-for="Name" type="text"
+                               id="name"
+                               placeholder="نام"
+                               required />
+                    </div>
+                    <span asp-validation-for="Name"></span>
+                    <div class="col-12 col-md-6">
+                        <input type="email"
+                               id="email"
+                               asp-for="Email"
+                               placeholder="ایمیل"
+                               required />
+                    </div>
+                    <span asp-validation-for="Email"></span>
+                </div>
+                <input type="text"
+                       id="subject"
+                       asp-for="Title"
+                       placeholder="موضوع"
+                       required />
+
+                <span asp-validation-for="Title"></span>
+                <textarea asp-for="MessageContact"
+                          id="message"
+                          placeholder="متن پیام"></textarea>
+
+                <span asp-validation-for="MessageContact"></span>
+                <button class="button button-md" type="submit">
+                    ارسال پیام
+                </button>
+            </form>
+        </div>
+        <!-- end contact-form -->
+    </div>
+
+</div>
+<!-- end section-box -->
+<!-- end Contact section -->

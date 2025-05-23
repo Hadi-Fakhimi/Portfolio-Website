@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Resume-V2.Presenation.props" />
+</Project>

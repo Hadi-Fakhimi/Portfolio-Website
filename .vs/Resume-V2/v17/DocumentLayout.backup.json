@@ -1,0 +1,117 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "F:\\Resume-V2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{330D571B-B43A-4178-B1A7-8758DCD97796}|Resume-V2.Application\\Resume-V2.Application.csproj|f:\\resume-v2\\resume-v2.application\\generator\\namegenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{330D571B-B43A-4178-B1A7-8758DCD97796}|Resume-V2.Application\\Resume-V2.Application.csproj|solutionrelative:resume-v2.application\\generator\\namegenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{330D571B-B43A-4178-B1A7-8758DCD97796}|Resume-V2.Application\\Resume-V2.Application.csproj|f:\\resume-v2\\resume-v2.application\\security\\passwordhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{330D571B-B43A-4178-B1A7-8758DCD97796}|Resume-V2.Application\\Resume-V2.Application.csproj|solutionrelative:resume-v2.application\\security\\passwordhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B0603D5-B875-457A-B116-B63A70401154}|Resume-V2.Presenation\\Resume-V2.Presenation.csproj|f:\\resume-v2\\resume-v2.presenation\\areas\\admin\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B0603D5-B875-457A-B116-B63A70401154}|Resume-V2.Presenation\\Resume-V2.Presenation.csproj|solutionrelative:resume-v2.presenation\\areas\\admin\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B0603D5-B875-457A-B116-B63A70401154}|Resume-V2.Presenation\\Resume-V2.Presenation.csproj|f:\\resume-v2\\resume-v2.presenation\\areas\\admin\\views\\shared\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1B0603D5-B875-457A-B116-B63A70401154}|Resume-V2.Presenation\\Resume-V2.Presenation.csproj|solutionrelative:resume-v2.presenation\\areas\\admin\\views\\shared\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B0603D5-B875-457A-B116-B63A70401154}|Resume-V2.Presenation\\Resume-V2.Presenation.csproj|f:\\resume-v2\\resume-v2.presenation\\areas\\admin\\views\\shared\\navbarpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1B0603D5-B875-457A-B116-B63A70401154}|Resume-V2.Presenation\\Resume-V2.Presenation.csproj|solutionrelative:resume-v2.presenation\\areas\\admin\\views\\shared\\navbarpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B0603D5-B875-457A-B116-B63A70401154}|Resume-V2.Presenation\\Resume-V2.Presenation.csproj|f:\\resume-v2\\resume-v2.presenation\\areas\\admin\\views\\shared\\sidebarpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1B0603D5-B875-457A-B116-B63A70401154}|Resume-V2.Presenation\\Resume-V2.Presenation.csproj|solutionrelative:resume-v2.presenation\\areas\\admin\\views\\shared\\sidebarpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "NameGenerator.cs",
+              "DocumentMoniker": "F:\\Resume-V2\\Resume-V2.Application\\Generator\\NameGenerator.cs",
+              "RelativeDocumentMoniker": "Resume-V2.Application\\Generator\\NameGenerator.cs",
+              "ToolTip": "F:\\Resume-V2\\Resume-V2.Application\\Generator\\NameGenerator.cs",
+              "RelativeToolTip": "Resume-V2.Application\\Generator\\NameGenerator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-28T10:31:18.141Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PasswordHelper.cs",
+              "DocumentMoniker": "F:\\Resume-V2\\Resume-V2.Application\\Security\\PasswordHelper.cs",
+              "RelativeDocumentMoniker": "Resume-V2.Application\\Security\\PasswordHelper.cs",
+              "ToolTip": "F:\\Resume-V2\\Resume-V2.Application\\Security\\PasswordHelper.cs",
+              "RelativeToolTip": "Resume-V2.Application\\Security\\PasswordHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-28T10:22:28.644Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "F:\\Resume-V2\\Resume-V2.Presenation\\Areas\\Admin\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Resume-V2.Presenation\\Areas\\Admin\\Controllers\\HomeController.cs",
+              "ToolTip": "F:\\Resume-V2\\Resume-V2.Presenation\\Areas\\Admin\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Resume-V2.Presenation\\Areas\\Admin\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-22T14:50:52.185Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "_AdminLayout.cshtml",
+              "DocumentMoniker": "F:\\Resume-V2\\Resume-V2.Presenation\\Areas\\Admin\\Views\\Shared\\_AdminLayout.cshtml",
+              "RelativeDocumentMoniker": "Resume-V2.Presenation\\Areas\\Admin\\Views\\Shared\\_AdminLayout.cshtml",
+              "ToolTip": "F:\\Resume-V2\\Resume-V2.Presenation\\Areas\\Admin\\Views\\Shared\\_AdminLayout.cshtml",
+              "RelativeToolTip": "Resume-V2.Presenation\\Areas\\Admin\\Views\\Shared\\_AdminLayout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-22T14:14:27.198Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "NavBarPartial.cshtml",
+              "DocumentMoniker": "F:\\Resume-V2\\Resume-V2.Presenation\\Areas\\Admin\\Views\\Shared\\NavBarPartial.cshtml",
+              "RelativeDocumentMoniker": "Resume-V2.Presenation\\Areas\\Admin\\Views\\Shared\\NavBarPartial.cshtml",
+              "ToolTip": "F:\\Resume-V2\\Resume-V2.Presenation\\Areas\\Admin\\Views\\Shared\\NavBarPartial.cshtml",
+              "RelativeToolTip": "Resume-V2.Presenation\\Areas\\Admin\\Views\\Shared\\NavBarPartial.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-22T14:14:05.3Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SideBarPartial.cshtml",
+              "DocumentMoniker": "F:\\Resume-V2\\Resume-V2.Presenation\\Areas\\Admin\\Views\\Shared\\SideBarPartial.cshtml",
+              "RelativeDocumentMoniker": "Resume-V2.Presenation\\Areas\\Admin\\Views\\Shared\\SideBarPartial.cshtml",
+              "ToolTip": "F:\\Resume-V2\\Resume-V2.Presenation\\Areas\\Admin\\Views\\Shared\\SideBarPartial.cshtml",
+              "RelativeToolTip": "Resume-V2.Presenation\\Areas\\Admin\\Views\\Shared\\SideBarPartial.cshtml",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAmwFcAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-22T13:58:28.924Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

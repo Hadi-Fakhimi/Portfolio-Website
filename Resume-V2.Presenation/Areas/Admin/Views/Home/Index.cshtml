@@ -1,0 +1,120 @@
+﻿@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "پنل ادمین";
+    var dailyRecords = ViewData["GetDailyRecords"] as List<int>;
+    var weeklyRecords = ViewData["GetWeeklyRecords"] as List<int>;
+    var monthlyRecords = ViewData["GetMonthlyRecords"] as List<int>;
+
+}
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card shadow">
+            <div class="card-header">
+                <strong class="card-title mb-0">میزان بازدید سایت در ماه</strong>
+                <span class="badge badge-secondary float-right mr-2">30 days</span>
+            </div>
+            <div class="card-body">
+                <canvas id="monthlyChart" width="400" height="300"></canvas>
+            </div> <!-- /.card-body -->
+        </div> <!-- /.card -->
+    </div> <!-- /. col -->
+        <div class="col-md-6">
+        <div class="card shadow">
+            <div class="card-header">
+                <strong class="card-title mb-0">میزان بازدید در هفته</strong>
+                <span class="badge badge-secondary float-right mr-2">7 days</span>
+            </div>
+            <div class="card-body">
+                <canvas id="weeklyChart" width="400" height="300"></canvas>
+            </div> <!-- /.card-body -->
+        </div> <!-- /.card -->
+    </div> <!-- /. col -->
+    <div class="col-md-6">
+        <div class="card shadow">
+            <div class="card-header">
+                <strong class="card-title mb-0">میزان بازدید در روز</strong>
+                <span class="badge badge-secondary float-right mr-2">Today</span>
+            </div>
+            <div class="card-body">
+                <canvas id="dailyChart" width="400" height="300"></canvas>
+            </div> <!-- /.card-body -->
+        </div> <!-- /.card -->
+    </div> <!-- /. col -->
+</div> <!-- end section -->
+
+
+
+@section Section {
+   <script>
+
+    var dailyData = @Html.Raw(Json.Serialize(dailyRecords));
+    var weeklyData = @Html.Raw(Json.Serialize(weeklyRecords));
+    var monthlyData = @Html.Raw(Json.Serialize(monthlyRecords));
+
+    var ctxDaily = document.getElementById('dailyChart').getContext('2d');
+    new Chart(ctxDaily, {
+        type: 'line', 
+        data: {
+            labels: ['روز 1', 'روز 2', 'روز 3', 'روز 4', 'روز 5', 'روز 6', 'روز 7'], 
+            datasets: [{
+                label: 'Daily Visits',
+                data: dailyData,
+                borderColor: 'rgba(75, 192, 192, 1)',
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { position: 'top' }
+            }
+        }
+    });
+
+    var ctxWeekly = document.getElementById('weeklyChart').getContext('2d');
+    new Chart(ctxWeekly, {
+        type: 'bar',
+        data: {
+            labels: ['هفته 1', 'هفته 2', 'هفته 3', 'هفته 4'],
+            datasets: [{
+                label: 'Weekly Visits',
+                data: weeklyData,
+                borderColor: 'rgba(54, 162, 235, 1)',
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { position: 'top' }
+            }
+        }
+    });
+
+
+    var ctxMonthly = document.getElementById('monthlyChart').getContext('2d');
+    new Chart(ctxMonthly, {
+        type: 'line',
+        data: {
+            labels: ['ماه 1', 'ماه 2', 'ماه 3', 'ماه 4', 'ماه 5', 'ماه 6', 
+                     'ماه 7', 'ماه 8', 'ماه 9', 'ماه 10', 'ماه 11', 'ماه 12'],
+            datasets: [{
+                label: 'Monthly Visits',
+                data: monthlyData,
+                borderColor: 'rgba(255, 206, 86, 1)',
+                backgroundColor: 'rgba(255, 206, 86, 0.2)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { position: 'top' }
+            }
+        }
+    });
+</script>
+}

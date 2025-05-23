@@ -1,0 +1,53 @@
+﻿@using Resume_V2.Application.DTOs
+@using Resume_V2.Application.StaticTools
+@model PortfolioPageViewModel
+@{
+    Layout = "_PortfolioLayout";
+    var pageVisit = ViewData["PageVisitView"] as int? ?? 0;
+}
+
+<div class="section-box">
+    <div class="row g-4">
+        <div class="col-12 col-xl-4">
+            <h6 class="mono-heading mb-0">کارفرما:</h6>
+            <p>@Model.ClientName</p>
+        </div>
+        <div class="col-12 col-xl-4">
+            <h6 class="mono-heading mb-0">سرویس ها:</h6>
+            <p>@Model.ServiceName</p>
+        </div>
+        <div class="col-12 col-xl-4">
+            <h6 class="mono-heading mb-0">مدت زمان:</h6>
+            <p>@Model.ProjectTime ساعت</p>
+        </div>
+        <div class="col-12 col-xl-4">
+            <h6 class="mono-heading mb-0">تعداد بازدید:</h6>
+            <p>@pageVisit</p>
+        </div>
+    </div>
+    <!-- end row -->
+    <div class="mt-4">
+        <h1>@Model.Title</h1>
+        <p>
+           @Model.Description
+        </p>
+    </div>
+
+    <div class="row g-4 mt-2">
+        <div class="col-12">
+            <img class="border-radius"
+                 src="@(FilePaths.PortfolioImg + Model.Image)"
+                 alt="@Model.ImageAlt" />
+        </div>
+        <div class="col-12 col-xl-6">
+            <!-- Image Lightbox -->
+            <a class="lightbox-image-box border-radius"
+               href="@(FilePaths.PortfolioPage1Img + Model.ImageDesc)">
+                <img src="@(FilePaths.PortfolioPage1Img + Model.ImageDesc)" alt="@Model.ImageAlt" />
+                <i class="bi bi-arrows-fullscreen"></i>
+            </a>
+        </div>
+
+    </div>
+    <!-- end row -->
+</div>

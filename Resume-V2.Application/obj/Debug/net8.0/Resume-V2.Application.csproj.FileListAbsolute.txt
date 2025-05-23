@@ -1,0 +1,17 @@
+F:\Resume-V2\Resume-V2.Application\bin\Debug\net8.0\Resume-V2.Application.deps.json
+F:\Resume-V2\Resume-V2.Application\bin\Debug\net8.0\Resume-V2.Application.dll
+F:\Resume-V2\Resume-V2.Application\bin\Debug\net8.0\Resume-V2.Application.pdb
+F:\Resume-V2\Resume-V2.Application\bin\Debug\net8.0\Resume-V2.Domain.dll
+F:\Resume-V2\Resume-V2.Application\bin\Debug\net8.0\Resume-V2.Infra.Data.dll
+F:\Resume-V2\Resume-V2.Application\bin\Debug\net8.0\Resume-V2.Domain.pdb
+F:\Resume-V2\Resume-V2.Application\bin\Debug\net8.0\Resume-V2.Infra.Data.pdb
+F:\Resume-V2\Resume-V2.Application\obj\Debug\net8.0\Resume-V2.Application.csproj.AssemblyReference.cache
+F:\Resume-V2\Resume-V2.Application\obj\Debug\net8.0\Resume-V2.Application.GeneratedMSBuildEditorConfig.editorconfig
+F:\Resume-V2\Resume-V2.Application\obj\Debug\net8.0\Resume-V2.Application.AssemblyInfoInputs.cache
+F:\Resume-V2\Resume-V2.Application\obj\Debug\net8.0\Resume-V2.Application.AssemblyInfo.cs
+F:\Resume-V2\Resume-V2.Application\obj\Debug\net8.0\Resume-V2.Application.csproj.CoreCompileInputs.cache
+F:\Resume-V2\Resume-V2.Application\obj\Debug\net8.0\Resume-V.596D0732.Up2Date
+F:\Resume-V2\Resume-V2.Application\obj\Debug\net8.0\Resume-V2.Application.dll
+F:\Resume-V2\Resume-V2.Application\obj\Debug\net8.0\refint\Resume-V2.Application.dll
+F:\Resume-V2\Resume-V2.Application\obj\Debug\net8.0\Resume-V2.Application.pdb
+F:\Resume-V2\Resume-V2.Application\obj\Debug\net8.0\ref\Resume-V2.Application.dll

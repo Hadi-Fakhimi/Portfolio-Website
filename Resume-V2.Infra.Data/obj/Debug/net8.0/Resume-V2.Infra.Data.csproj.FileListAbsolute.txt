@@ -1,0 +1,17 @@
+F:\Resume-V2\Resume-V2.Infra.Data\bin\Debug\net8.0\Resume-V2.Infra.Data.deps.json
+F:\Resume-V2\Resume-V2.Infra.Data\bin\Debug\net8.0\Resume-V2.Infra.Data.runtimeconfig.json
+F:\Resume-V2\Resume-V2.Infra.Data\bin\Debug\net8.0\Resume-V2.Infra.Data.dll
+F:\Resume-V2\Resume-V2.Infra.Data\bin\Debug\net8.0\Resume-V2.Infra.Data.pdb
+F:\Resume-V2\Resume-V2.Infra.Data\bin\Debug\net8.0\Resume-V2.Domain.dll
+F:\Resume-V2\Resume-V2.Infra.Data\bin\Debug\net8.0\Resume-V2.Domain.pdb
+F:\Resume-V2\Resume-V2.Infra.Data\obj\Debug\net8.0\Resume-V2.Infra.Data.csproj.AssemblyReference.cache
+F:\Resume-V2\Resume-V2.Infra.Data\obj\Debug\net8.0\Resume-V2.Infra.Data.GeneratedMSBuildEditorConfig.editorconfig
+F:\Resume-V2\Resume-V2.Infra.Data\obj\Debug\net8.0\Resume-V2.Infra.Data.AssemblyInfoInputs.cache
+F:\Resume-V2\Resume-V2.Infra.Data\obj\Debug\net8.0\Resume-V2.Infra.Data.AssemblyInfo.cs
+F:\Resume-V2\Resume-V2.Infra.Data\obj\Debug\net8.0\Resume-V2.Infra.Data.csproj.CoreCompileInputs.cache
+F:\Resume-V2\Resume-V2.Infra.Data\obj\Debug\net8.0\Resume-V.40C9F5B7.Up2Date
+F:\Resume-V2\Resume-V2.Infra.Data\obj\Debug\net8.0\Resume-V2.Infra.Data.dll
+F:\Resume-V2\Resume-V2.Infra.Data\obj\Debug\net8.0\refint\Resume-V2.Infra.Data.dll
+F:\Resume-V2\Resume-V2.Infra.Data\obj\Debug\net8.0\Resume-V2.Infra.Data.pdb
+F:\Resume-V2\Resume-V2.Infra.Data\obj\Debug\net8.0\Resume-V2.Infra.Data.genruntimeconfig.cache
+F:\Resume-V2\Resume-V2.Infra.Data\obj\Debug\net8.0\ref\Resume-V2.Infra.Data.dll

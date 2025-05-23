@@ -1,0 +1,72 @@
+﻿@using Resume_V2.Application.DTOs
+@using Resume_V2.Application.StaticTools
+@model BlogPageViewModel
+@{
+    Layout = "_BlogLayout";
+    ViewData["Title"] = "وبلاگ";
+
+    var pageVisit = ViewData["PageVisitView"] as int? ?? 0;
+}
+
+
+<div class="section-box">
+    <div class="row g-4">
+        <div class="col-12 col-xl-4">
+            <h6 class="mono-heading mb-0">منتشر شده توسط:</h6>
+            <p>@Model.Publisher</p>
+        </div>
+        <div class="col-12 col-xl-4">
+            <h6 class="mono-heading mb-0">دسته بندی:</h6>
+            <p>@Model.CategoryName</p>
+        </div>
+        <div class="col-12 col-xl-4">
+            <h6 class="mono-heading mb-0">منتشر شده در:</h6>
+            <p>@Model.Date</p>
+        </div>
+        <div class="col-12 col-xl-4">
+            <h6 class="mono-heading mb-0">تعداد بازدید:</h6>
+            <p>@pageVisit</p>
+        </div>
+    </div>
+    <!-- end row -->
+
+    <div class="mt-4">
+        <h1>@Model.Title</h1>
+        <p>
+            @Model.DescriptionText
+        </p>
+    </div>
+
+    <div class="row g-4 mt-2">
+        <div class="col-12">
+            <img class="border-radius"
+                 src="@(FilePaths.BlogImg + Model.Image)"
+                 alt="" />
+        </div>
+        <div class="col-12">
+            <h4 class="fw-medium">@Model.DescriptionTitle</h4>
+            <p>@Model.DescriptionText2
+            </p>
+        </div>
+
+        <div class="col-12 col-xl-6">
+            <!-- Image Lightbox -->
+            <a class="lightbox-image-box border-radius"
+               href="@(FilePaths.BlogPage1Img + Model.DescriptionImage)">
+                <img src="@(FilePaths.BlogPage1Img + Model.DescriptionImage)" alt="" />
+                <i class="bi bi-arrows-fullscreen"></i>
+            </a>
+        </div>
+        <div class="col-12 col-xl-6">
+            <!-- Image Lightbox -->
+            <a class="lightbox-image-box border-radius"
+               href="@(FilePaths.BlogPage2Img + Model.DescriptionImage2)">
+                <img src="@(FilePaths.BlogPage2Img + Model.DescriptionImage2)" alt="" />
+                <i class="bi bi-arrows-fullscreen"></i>
+            </a>
+        </div>
+
+    </div>
+    <!-- end row -->
+
+</div>

@@ -1,0 +1,12 @@
+F:\Resume-V2\Resume-V2.Domain\bin\Debug\net8.0\Resume-V2.Domain.deps.json
+F:\Resume-V2\Resume-V2.Domain\bin\Debug\net8.0\Resume-V2.Domain.dll
+F:\Resume-V2\Resume-V2.Domain\bin\Debug\net8.0\Resume-V2.Domain.pdb
+F:\Resume-V2\Resume-V2.Domain\obj\Debug\net8.0\Resume-V2.Domain.csproj.AssemblyReference.cache
+F:\Resume-V2\Resume-V2.Domain\obj\Debug\net8.0\Resume-V2.Domain.GeneratedMSBuildEditorConfig.editorconfig
+F:\Resume-V2\Resume-V2.Domain\obj\Debug\net8.0\Resume-V2.Domain.AssemblyInfoInputs.cache
+F:\Resume-V2\Resume-V2.Domain\obj\Debug\net8.0\Resume-V2.Domain.AssemblyInfo.cs
+F:\Resume-V2\Resume-V2.Domain\obj\Debug\net8.0\Resume-V2.Domain.csproj.CoreCompileInputs.cache
+F:\Resume-V2\Resume-V2.Domain\obj\Debug\net8.0\Resume-V2.Domain.dll
+F:\Resume-V2\Resume-V2.Domain\obj\Debug\net8.0\refint\Resume-V2.Domain.dll
+F:\Resume-V2\Resume-V2.Domain\obj\Debug\net8.0\Resume-V2.Domain.pdb
+F:\Resume-V2\Resume-V2.Domain\obj\Debug\net8.0\ref\Resume-V2.Domain.dll
