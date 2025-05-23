@@ -19,12 +19,12 @@ Includes 🔐 authentication, ✉️ email service, 📈 visit tracking, and a �
 
 ## 🛠 Technologies & Tools
 
-| 🔧 Stack              | 💡 Details                    |
+| 🔧 Stack              | 💡 Details                 |
 |----------------------|------------------------------|
 | Framework            | ASP.NET Core 5               |
 | Architecture         | Clean Architecture           |
 | ORM                  | Entity Framework Core        |
-| Authentication       | Password Hashing             |
+| Authentication       | Identity , Password Hashing  |
 | Email Service        | MailKit                      |
 | Validation           | FluentValidation             |
 | Database             | SQL Server                   |
